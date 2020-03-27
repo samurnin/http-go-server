@@ -9,8 +9,8 @@ import (
 
 func main() {
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+	http.HandleFunc("/", func(responseWriter http.ResponseWriter, request *http.Request) {
+		fmt.Fprintf(responseWriter, "Hello, %q", html.EscapeString(request.URL.Path))
 	})
 	log.Println("Listening on localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
