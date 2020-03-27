@@ -49,7 +49,7 @@ Swagger doc: [http-go-server](https://github.com/samurnin/http-go-server/doc/ind
 
 After editing `pkg/swagger/swagger.yml` file you need to generate swagger files again:
 
-`$ make gen.swagger`
+`$ make generate`
 
 ## Test swagger file validity
 
