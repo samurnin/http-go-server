@@ -34,7 +34,7 @@ dev: license generate format lint.fast build
 .PHONY: get.tools
 
 ## Retrieve tools packages
-get.tools:
+get-tools:
 	# License checker
 	go get -u github.com/frapposelli/wwhrd
  	# linter
@@ -77,7 +77,7 @@ endif
 ## Launch linter
 lint.fast:
 ifndef GOLANGCI
-	$(error "Please install golangci! make get.tools")
+	$(error "Please install golangci! make get-tools")
 endif
 	@echo "==> linters (fast)"
 	@golangci-lint run -v --fast $(pkgDirs)
@@ -85,7 +85,7 @@ endif
 ## Validate code
 lint.full:
 ifndef GOLANGCI
-	$(error "Please install golangci! make get.tools")
+	$(error "Please install golangci! make get-tools")
 endif
 	@echo "==> linters (slow)"
 	@golangci-lint run -v $(pkgDirs)
