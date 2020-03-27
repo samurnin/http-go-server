@@ -77,7 +77,7 @@ endif
 ## Launch linter
 lint.fast:
 ifndef GOLANGCI
-	$(error "Please install golangci! make get-tools")
+	$(error "Please install golangci! make get.tools")
 endif
 	@echo "==> linters (fast)"
 	@golangci-lint run -v --fast $(pkgDirs)
@@ -85,7 +85,7 @@ endif
 ## Validate code
 lint.full:
 ifndef GOLANGCI
-	$(error "Please install golangci! make get-tools")
+	$(error "Please install golangci! make get.tools")
 endif
 	@echo "==> linters (slow)"
 	@golangci-lint run -v $(pkgDirs)
@@ -128,7 +128,7 @@ depend.update:
 	@echo "==> Update go modules"
 	$(GO) get -u -v
 
-depend.update.full: depend.cleanlock depend.update
+#depend.update.full: depend.cleanlock depend.update
 
 #-------------------------
 # Target: clean

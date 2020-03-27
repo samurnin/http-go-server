@@ -1,11 +1,12 @@
 package main
 
 import (
+	"log"
+
 	"github.com/go-openapi/loads"
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/samurnin/http-go-server/pkg/swagger/server/restapi"
 	"github.com/samurnin/http-go-server/pkg/swagger/server/restapi/operations"
-	"log"
 )
 
 func main() {
